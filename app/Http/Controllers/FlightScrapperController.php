@@ -28,7 +28,7 @@ class FlightScrapperController extends Controller
         ]);
         $departureDate = $request->input('departureDate');
 
-        $host = 'http://localhost:9515';
+        $host = env('CHROME_DRIVER_URL');
         $driver = RemoteWebDriver::create($host, DesiredCapabilities::chrome());
         $browser = new Browser($driver);
 
